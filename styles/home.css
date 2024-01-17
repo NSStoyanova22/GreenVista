@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #F5F5F5;
 }
 html{
     font-size: 62.5%;
@@ -19,7 +20,7 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 6rem;
+    
 }
 
 li {
@@ -39,3 +40,4 @@ a img {
     max-height: 100%; 
     height: 4.5rem;
 }
+ 
