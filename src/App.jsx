@@ -3,6 +3,7 @@ import forum from '../public/forum-icon.svg'
 import chat from '../public/chat-icon.svg'
 
 import '../styles/app.css'
+
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide,  } from 'swiper/react';
@@ -37,7 +38,7 @@ export default function App() {
     </li>
   </ul>
 </nav>
-<h1 className="heading">Our Challgenge!</h1>
+<h1 className="heading">Our Challenge!</h1>
   <h2 className="heading2">Swipe to find your daily challenge</h2>
       <Swiper
         effect={'cards'}
@@ -45,15 +46,51 @@ export default function App() {
         modules={[EffectCards]}
         className="mySwiper"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        <SwiperSlide><p className="cardHeading">Today I should...</p>
+        <p className="ecoIdeas">Switch to Reusable Bags</p>
+        <label htmlFor="files" className="btn">Take a photo</label>
+        <input id="files" style={{ visibility: "hidden" }} type="file" />
+        </SwiperSlide>
+        <SwiperSlide><p className="cardHeading">Today I should...</p>
+        <p className="ecoIdeas">Recycle, reuse</p>
+        <label htmlFor="files" className="btn">Take a photo</label>
+        <input id="files" style={{ visibility: "hidden" }} type="file" />
+        </SwiperSlide>
+        <SwiperSlide><p className="cardHeading">Today I should...</p>
+        <p className="ecoIdeas">Use long-lasting light bulbs</p>
+        <label htmlFor="files" className="btn">Take a photo</label>
+        <input id="files" style={{ visibility: "hidden" }} type="file" />
+        </SwiperSlide>
+        <SwiperSlide><p className="cardHeading">Today I should...</p>
+        <p className="ecoIdeas">Drive less</p>
+        <label htmlFor="files" className="btn">Take a photo</label>
+        <input id="files" style={{ visibility: "hidden" }} type="file" />
+        </SwiperSlide>
+        <SwiperSlide><p className="cardHeading">Today I should...</p>
+        <p className="ecoIdeas">Shop wisely</p>
+        <label htmlFor="files" className="btn">Take a photo</label>
+        <input id="files" style={{ visibility: "hidden" }} type="file" />
+        </SwiperSlide>
+        <SwiperSlide><p className="cardHeading">Today I should...</p>
+        <p className="ecoIdeas">Eat organic</p>
+        <label htmlFor="files" className="btn">Take a photo</label>
+        <input id="files" style={{ visibility: "hidden" }} type="file" />
+        </SwiperSlide>
+        <SwiperSlide><p className="cardHeading">Today I should...</p>
+        <p className="ecoIdeas">Use tote bag</p>
+        <label htmlFor="files" className="btn">Take a photo</label>
+        <input id="files" style={{ visibility: "hidden" }} type="file" />
+        </SwiperSlide>
+        <SwiperSlide><p className="cardHeading">Today I should...</p>
+        <p className="ecoIdeas">Be more energy efficient</p>
+        <label htmlFor="files" className="btn">Take a photo</label>
+        <input id="files" style={{ visibility: "hidden" }} type="file" />
+        </SwiperSlide>
+        <SwiperSlide><p className="cardHeading">Today I should...</p>
+        <p className="ecoIdeas">Start waste sorting</p>
+        <label htmlFor="files" className="btn">Take a photo</label>
+        <input id="files" style={{ visibility: "hidden" }} type="file" />
+        </SwiperSlide>
       </Swiper>
     </>
   )

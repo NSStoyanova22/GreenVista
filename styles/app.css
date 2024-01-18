@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 #app { height: 100% }
 body {
     margin: 0;
@@ -51,16 +52,17 @@ a img {
 
 .swiper {
   margin-top: 40px;
-  width: 300px;
-  height: 380px;
+  width: 38rem;
+  height: 40rem;
 }
 
 .swiper-slide {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 18px;
-  font-size: 22px;
+
   font-weight: bold;
   color: #fff;
 }
@@ -108,9 +110,44 @@ a img {
 .heading{
   text-align: center;
   font-size: 4.5rem;
+  font-family: "Montserrat", sans-serif;
+  color: #3e533f;
+  font-weight: 900;
 }
 .heading2{
   text-align: center;
   font-size: 2rem;
   text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  color: #3e533f;
+  font-weight: 900;
 }
+
+.btn{
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 2rem;
+  background-color: white;
+  color: #3e533f;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  cursor: pointer;
+  font-weight: 900;
+  border-radius: 0.8rem;
+}
+
+.ecoIdeas{
+  font-size: 4rem;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+}
+
+.cardHeading{
+  font-size: 3rem;
+  margin-bottom: 0.1rem;
+  margin-top:1px
+}
+
