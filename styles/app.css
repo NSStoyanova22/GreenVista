@@ -50,6 +50,7 @@ a img {
 }
 
 .swiper {
+  margin-top: 40px;
   width: 240px;
   height: 320px;
 }
@@ -104,3 +105,12 @@ a img {
   background-color: rgb(54, 94, 77);
 }
 
+.heading{
+  text-align: center;
+  font-size: 4.5rem;
+}
+.heading2{
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+}

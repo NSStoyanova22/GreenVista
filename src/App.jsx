@@ -37,6 +37,8 @@ export default function App() {
     </li>
   </ul>
 </nav>
+<h1 className="heading">Our Challgenge!</h1>
+  <h2 className="heading2">Swipe to find your daily challenge</h2>
       <Swiper
         effect={'cards'}
         grabCursor={true}
