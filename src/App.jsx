@@ -1,4 +1,6 @@
-
+import home from '../public/home-icon.svg'
+import forum from '../public/forum-icon.svg'
+import chat from '../public/chat-icon.svg'
 
 import '../styles/app.css'
 
