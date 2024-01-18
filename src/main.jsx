@@ -10,6 +10,7 @@ import {
 import ErrorPage from "./error-page";
 // import Contact from "./routes/contact";
 import { LogIn } from './components/LogIn';
+import { Register } from './components/Register';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/LogIn",
     element: <LogIn />,
+  },
+  {
+    path: "/Register",
+    element: <Register />,
   }
 ]);
 
