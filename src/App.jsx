@@ -2,6 +2,7 @@ import home from '../public/home-icon.svg'
 import forum from '../public/forum-icon.svg'
 import chat from '../public/chat-icon.svg'
 
+
 import '../styles/app.css'
 
 import React, { useRef, useState } from 'react';
@@ -9,6 +10,8 @@ import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide,  } from 'swiper/react';
 import { EffectCards } from 'swiper/modules';
 import { Navbar } from './components/Navbar';
+import '../styles/ChatBot.css'; // Or wherever your CSS is located
+import ChatBot from '../src/components/ChatBot.jsx'; // Adjust the path based on your file structure
 export default function App() {
   const [count, setCount] = useState(0)
 
@@ -96,5 +99,6 @@ export default function App() {
     </>
   )
 }
+
 
 
