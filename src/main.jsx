@@ -7,24 +7,25 @@ import {
   RouterProvider,
 } from "react-router-dom";
 // import Root from "./routes/root";
-// import ErrorPage from "./error-page";
+import ErrorPage from "./error-page";
 // import Contact from "./routes/contact";
+import { LogIn } from './components/LogIn';
 
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Root />,
-//     errorElement: <ErrorPage />,
-//   },
-//   {
-//     path: "contacts/:contactId",
-//     element: <Contact />,
-//   }
-// ]);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/LogIn",
+    element: <LogIn />,
+  }
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <RouterProvider router={router} /> */}
-    <App />
+    <RouterProvider router={router} />
+    {/* <App /> */}
   </React.StrictMode>,
 )

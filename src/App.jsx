@@ -1,42 +1,17 @@
-import home from '../public/home-icon.svg'
-import forum from '../public/forum-icon.svg'
-import chat from '../public/chat-icon.svg'
+
 
 import '../styles/app.css'
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide,  } from 'swiper/react';
 import { EffectCards } from 'swiper/modules';
+import { Navbar } from './components/Navbar';
 export default function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <nav>
-    <ul>
-    <li>
-      <a href="#">
-        <img src={home} alt="" />
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <img src={forum} alt="" />
-      </a>
-    </li>
-    <li>
-      <a>chatbot</a>
-    </li>
-    <li>
-      <a>
-        <img src={chat} alt="" />
-      </a>
-    </li>
-    <li>
-      <a>profile</a>
-    </li>
-  </ul>
-</nav>
+    <Navbar />
 <h1 className="heading">Our Challgenge!</h1>
   <h2 className="heading2">Swipe to find your daily challenge</h2>
       <Swiper
