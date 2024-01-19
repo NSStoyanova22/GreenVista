@@ -28,7 +28,7 @@
     width: 100%;
     height: 78px;
     border-bottom: 2px solid #43644b;
-    margin: 51px 0;
+    margin-bottom: 3.5rem;
 }
 .input-box input{
     width: 100%;
@@ -50,11 +50,54 @@
 .arrow{
     height: 2rem;
 }
-.register{
-    color: #43644b;
-}
+
 .LogIn{
     background-color: #232c23;
     height: 100vh;
 }
+.register-button{
+    border: blue;
+}
+
+
+.register-button {
+    background-color: #4F6F52;
+    border: 1px solid #313d32;
+    border-radius: 1.1rem;
+    color: #f7f1e7;
+    font-weight: 700;
+    padding: 0.2rem 1.2rem;
+    user-select: none;
+    margin-top: 1.2rem;
+}
+
+
+
+
+.register-button:active {
+  background-color: #68816a;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #f0e7e2;
+}
+
+.register-button:hover {
+  background-color: #445846;
+  border-color: #2d382e;
+}
+
+.register-button:active:hover,
+.register-button:focus:hover,
+.register-button:focus {
+  background-color: #445846;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #ece7e3;
+}
+.signin-button{
+    padding: 2rem 5rem 2rem 5rem;
+    font-size: 2rem;
+}
+.arrow{
+    height: 2rem;
+}
+
 

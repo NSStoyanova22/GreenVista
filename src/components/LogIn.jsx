@@ -26,12 +26,15 @@ export const LogIn = () => {
                     <p>
                     Don't have an account?{" "}
                     <br />
-                        <a href="/Register" className="register">Register</a>
+                    <button className='register-button'> 
+                       < a href="/Register" className="register">Register</a>
+                    </button>
+                        
         
                     
                     </p>
                 
-                <button className="button-24" role="button">
+                <button className="register-button signin-button" role="button">
                     Sign In
                 </button>
                 </form>

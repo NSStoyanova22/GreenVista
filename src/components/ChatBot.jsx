@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../../styles/ChatBot.css'
+import OpenAI from 'openai';
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
