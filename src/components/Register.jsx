@@ -1,13 +1,16 @@
 import '../../styles/login.css'
 import React from "react";
-import { Navbar } from "./Navbar";
-import Arrow from "../../public/arrow.svg"
+import Screenshot from '../../public/Computer-Phone-screenshot.svg'
 export const Register = () => {
    
     return (
         <div className='LogIn'>
-          <img className='arrow' src={ Arrow } alt="Arrow" />
-            <div className="form">
+        <div className='display'>
+            <div className='img-screenshot'>
+            <img src={Screenshot} className='img-phonelaptop' alt="" />
+            </div>
+           
+                        <div className="form">
                 <h2>Register</h2>
                 <form action="#">
                 <div className="input-box">
@@ -27,21 +30,18 @@ export const Register = () => {
                     Already have an account?{" "}
                     <br />
                     <button className='register-button'> 
-                       < a href="/LogIn" className="register">Log In</a>
+                        < a href="/LogIn" className="register">Log In</a>
                     </button>
-                        
-        
-                    
                     </p>
-                
                 <button className="register-button signin-button" role="button">
-                   Register
+                    Register
                 </button>
                 </form>
             </div>
-        
+
         </div>
       
+    </div>
         
     )
 }

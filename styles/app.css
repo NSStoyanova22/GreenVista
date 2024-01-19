@@ -2,8 +2,9 @@
 #app { height: 100% }
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
     background-color: #F5F5F5;
+    font-family: "Montserrat", sans-serif;
+
 }
 html{
     font-size: 62.5%;
@@ -29,7 +30,7 @@ li {
     margin: 0 1rem;
 }
 
-a {
+li > a, button > a{
     color: white;
     text-decoration: none;
     padding: 1.4rem 1.6rem;

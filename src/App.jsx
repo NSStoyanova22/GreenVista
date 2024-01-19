@@ -17,31 +17,7 @@ export default function App() {
 
   return (
     <>
-    <nav>
-    <ul>
-    <li>
-      <a href="#">
-        <img src={home} alt="" />
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <img src={forum} alt="" />
-      </a>
-    </li>
-    <li>
-      <a>chatbot</a>
-    </li>
-    <li>
-      <a>
-        <img src={chat} alt="" />
-      </a>
-    </li>
-    <li>
-      <a>profile</a>
-    </li>
-  </ul>
-</nav>
+    <Navbar />
 <h1 className="heading">Our Challgenge!</h1>
   <h2 className="heading2">Swipe to find your daily challenge</h2>
       <Swiper

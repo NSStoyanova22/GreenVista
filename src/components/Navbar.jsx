@@ -17,11 +17,7 @@ export const Navbar = () => {
                         <img src={forum} alt="" />
                     </a>
                 </li>
-                <li>
-                    <a href="/LogIn">
-                        LogIn
-                    </a>
-                </li>
+                
                 <li>
                     <a>chatbot</a>
                 </li>

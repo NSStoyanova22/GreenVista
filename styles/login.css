@@ -1,7 +1,5 @@
 
 .form{
-    margin: auto;
-    position: relative;
     width: 50rem;
     height: 54rem;
     background: transparent;
@@ -9,9 +7,9 @@
     border-radius: 2rem;
     background-color: #F2F1EB;
     box-shadow: 0 0 3rem #232c23;
-    margin-top: 7rem;
     padding: 4rem;
-    padding-top: 5rem;
+    padding-bottom: 7rem
+    
 }
 .form > h2, form {
     color: #43644b;
@@ -19,13 +17,19 @@
 }
 .form > h2{
     font-size: 4rem;
+    font-weight: 900;
+
 }
 .form > form{
     font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .input-box{
     position: relative;
-    width: 100%;
+    width: 80%;
     height: 78px;
     border-bottom: 2px solid #43644b;
     margin-bottom: 3.5rem;
@@ -46,23 +50,23 @@
     color: #43644b;
     font-weight: 500;
     padding-bottom: 6rem;
+
 }
-.arrow{
-    height: 2rem;
-}
+
 
 .LogIn{
     background-color: #232c23;
     height: 100vh;
+    padding-top: 8rem;
+    justify-content: center;
+      align-items: center;
 }
-.register-button{
-    border: blue;
-}
+
 
 
 .register-button {
     background-color: #4F6F52;
-    border: 1px solid #313d32;
+    border: 1px solid #4F6F52;
     border-radius: 1.1rem;
     color: #f7f1e7;
     font-weight: 700;
@@ -93,11 +97,24 @@
   color: #ece7e3;
 }
 .signin-button{
+    padding: 2rem;
     padding: 2rem 5rem 2rem 5rem;
     font-size: 2rem;
 }
-.arrow{
-    height: 2rem;
+/* .lineVertical{
+    border-left: 0.5rem solid #f7f1e7;
+    height: 58rem;
+    border-radius: 9%;
+    width: 4rem;
+   
+} */
+.display{
+    display: flex;
+    text-align: center;
+
+}
+.img-phonelaptop{
+    height: 73rem;
 }
 
 

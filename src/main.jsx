@@ -27,7 +27,9 @@ const router = createBrowserRouter([
     path: "/Register",
     element: <Register />,
   }
-]);
+
+
+])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
