@@ -13,13 +13,13 @@ export const Navbar = () => {
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/Forum">
                         <img src={forum} alt="" />
                     </a>
                 </li>
                 
                 <li>
-                    <a>chatbot</a>
+                    <a href="#" className="nav-title">GreenVista</a>
                 </li>
                 <li>
                     <a>

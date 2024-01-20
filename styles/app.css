@@ -145,10 +145,18 @@ a img {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
 }
+.ecoInfo{
+  font-size: 2rem;
+  text-align: center;
+}
 
 .cardHeading{
   font-size: 3rem;
   margin-bottom: 0.1rem;
   margin-top:1px
+}
+.nav-title{
+  font-size: 4rem;
+  font-weight: 900;
 }
 

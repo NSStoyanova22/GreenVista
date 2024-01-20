@@ -18,7 +18,7 @@ export default function App() {
   return (
     <>
     <Navbar />
-<h1 className="heading">Our Challgenge!</h1>
+<h1 className="heading">Our Challenge!</h1>
   <h2 className="heading2">Swipe to find your daily challenge</h2>
       <Swiper
         effect={'cards'}
@@ -32,22 +32,23 @@ export default function App() {
         <input id="files" style={{ visibility: "hidden" }} type="file" />
         </SwiperSlide>
         <SwiperSlide><p className="cardHeading">Today I should...</p>
-        <p className="ecoIdeas">Recycle, reuse</p>
+        <p className="ecoIdeas">Recycle/ reuse</p>
         <label htmlFor="files" className="btn">Take a photo</label>
         <input id="files" style={{ visibility: "hidden" }} type="file" />
         </SwiperSlide>
         <SwiperSlide><p className="cardHeading">Today I should...</p>
-        <p className="ecoIdeas">Use long-lasting light bulbs</p>
+        <p className="ecoIdeas">Buy long-lasting light bulbs</p>
         <label htmlFor="files" className="btn">Take a photo</label>
         <input id="files" style={{ visibility: "hidden" }} type="file" />
         </SwiperSlide>
         <SwiperSlide><p className="cardHeading">Today I should...</p>
-        <p className="ecoIdeas">Drive less</p>
+        <p className="ecoIdeas">Use the metro/ bus</p>
         <label htmlFor="files" className="btn">Take a photo</label>
         <input id="files" style={{ visibility: "hidden" }} type="file" />
         </SwiperSlide>
         <SwiperSlide><p className="cardHeading">Today I should...</p>
-        <p className="ecoIdeas">Shop wisely</p>
+        <p className="ecoIdeas">Make a seed bomb</p>
+        <p className="ecoInfo">with clay, compost, and wildflower seeds</p>
         <label htmlFor="files" className="btn">Take a photo</label>
         <input id="files" style={{ visibility: "hidden" }} type="file" />
         </SwiperSlide>
@@ -57,7 +58,7 @@ export default function App() {
         <input id="files" style={{ visibility: "hidden" }} type="file" />
         </SwiperSlide>
         <SwiperSlide><p className="cardHeading">Today I should...</p>
-        <p className="ecoIdeas">Use tote bag</p>
+        <p className="ecoIdeas">Buy a tote bag</p>
         <label htmlFor="files" className="btn">Take a photo</label>
         <input id="files" style={{ visibility: "hidden" }} type="file" />
         </SwiperSlide>
@@ -69,6 +70,31 @@ export default function App() {
         <SwiperSlide><p className="cardHeading">Today I should...</p>
         <p className="ecoIdeas">Start waste sorting</p>
         <label htmlFor="files" className="btn">Take a photo</label>
+        </SwiperSlide>
+        <SwiperSlide><p className="cardHeading">Today I should...</p>
+        <p className="ecoIdeas">Start an Adopt-a-Tree Program</p>
+        <label htmlFor="files" className="btn">Take a photo</label>
+        </SwiperSlide>
+        <SwiperSlide><p className="cardHeading">Today I should...</p>
+        <p className="ecoIdeas">Create an upcycled art installation</p>
+        <label htmlFor="files" className="btn">Take a photo</label>
+        </SwiperSlide>
+        <SwiperSlide><p className="cardHeading">Today I should...</p>
+        <p className="ecoIdeas">Use a reusable gift wrap</p>
+        <label htmlFor="files" className="btn">Take a photo</label>
+        </SwiperSlide>
+        <SwiperSlide><p className="cardHeading">Today I should...</p>
+        <p className="ecoIdeas">Zero-Waste Lunch Challenge</p>
+        <p className="ecoInfo">with completely reusable containers and utensils</p>
+        <label htmlFor="files" className="btn">Take a photo</label>
+        </SwiperSlide>
+        <SwiperSlide><p className="cardHeading">Today I should...</p>
+        <p className="ecoIdeas">Ride the bike to work/school</p>
+        <label htmlFor="files" className="btn">Take a photo</label>
+        </SwiperSlide>
+        <SwiperSlide>
+        <p className="ecoIdeas">New ideas coming soon!</p>
+        
         <input id="files" style={{ visibility: "hidden" }} type="file" />
         </SwiperSlide>
       </Swiper>
