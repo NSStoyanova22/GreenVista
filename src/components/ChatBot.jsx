@@ -29,16 +29,13 @@ const ChatBot = () => {
 
   const getBotResponse = async (input) => {
     try {
-      const apiEndpoint = 'https://api.openai.com/v1/completions'; // Corrected API endpoint
-      const apiKey = 'Sk-4JrfYAKVOu8toaSofjOpT3BlbkFJ7zwvrnmaPZPd3xpYwg7m';
-
-      const response = await axios.post(apiEndpoint, {
+      const response = await axios.post(process.env.REACT_APP_OPENAI_API_ENDPOINT, {
         prompt: input,
         max_tokens: 150,
       }, {
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${apiKey}`
+          Authorization: `Bearer ${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}`
         }
       });
       return response.data.choices[0].text;
