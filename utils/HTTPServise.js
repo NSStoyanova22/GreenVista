@@ -1,5 +1,5 @@
 import axios from 'axios';
-const baseUrl = 'https://localhost:3000/';
+const baseUrl = 'http://localhost:3000/';
 
 export const loginUser = (userData) => {
     const url = baseUrl + 'login';
@@ -11,5 +11,7 @@ export const forumDataList = () => {
         "Content-Type": "application/json",
       };
     const url = baseUrl + 'forumDataList';
-    return axios.get(url, headers);
+    return axios.get(url, headers).then((res) => {
+        return res;
+    });
 }

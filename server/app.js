@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const port = 3000;
 var cors = require('cors');
+const pgRouter = require('./databases/postgres.js')
+
 app.use(cors());
 //cors({ origin : [ "http://localhost:5174"]})
 
