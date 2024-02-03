@@ -3,11 +3,13 @@ import home from '../../public/home-icon.svg'
 import forum from '../../public/forum-icon.svg'
 import chat from '../../public/chat-icon.svg'
 
+
 export const Navbar = () => {
     return(
         <nav>
             <ul>
                 <li>
+                    {/* svurji home s app.jsx */}
                     <a href="#">
                         <img src={home} alt="" />
                     </a>

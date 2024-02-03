@@ -1,11 +1,13 @@
 import React from "react";
-
-
+import { Post } from "./Post";
+import { Navbar } from "./Navbar";
+import '../../styles/Forum.css'
 export const Forum = () => {
   return(
-    <div>
-        <h1>This is our forum!</h1>
-        {/* to be done  */}
+   
+    <div className="forumPage">
+       <Navbar />
+        <Post />
     </div>
   )
 }
