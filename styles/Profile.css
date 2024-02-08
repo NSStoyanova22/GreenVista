@@ -18,9 +18,11 @@
     display: flex;
     flex-direction: row;
     font-size: 2rem;
-    gap: 10rem;
+    gap: 17rem;
 }
-
+.buttonsProfile{
+  margin-left: 30rem;
+}
 .buttonProfile{
     background-color: #4F6F52;
     border: 1px solid #4F6F52;
@@ -29,10 +31,10 @@
     font-weight: 700;
     padding: 0.2rem 1.2rem;
     user-select: none;
-    margin-top: 1.2rem;
+    margin-top: 5rem;
     padding: 2rem 5rem 2rem 5rem;
     font-size: 2rem;
-    margin-left: 5rem;
+    margin-left: 11rem;
 }
 .buttonProfile:hover {
     background-color: #445846;
@@ -51,3 +53,25 @@
     box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
     color: #f0e7e2;
   }
+  .horizontal-line {
+    background-color: rgb(132, 155, 132);
+    height: 0.7rem; 
+    width: 60%; 
+    margin: 0 auto; 
+    margin-top: 10rem;
+    
+  }
+  .streakProfile {
+    
+    padding: 20rem;
+    width: 10rem; 
+    margin: 10rem auto; 
+    border-top-left-radius: 2rem; 
+    border-bottom-left-radius: 2rem; 
+    border-top-right-radius: 2rem; 
+    border-bottom-right-radius: 2rem; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Adjust shadow as needed */
+    font-size: 2rem;
+    /* Work on text inside, heather, streak photo, etc. learn about the js of the cards and try and add something similar to this to the text of the profile */
+  }
+  

@@ -19,12 +19,16 @@ export const Profile = () => {
             </div>
             <div className="buttonsProfile">
                 <button className='buttonProfile'> 
-                Register
+                Follow
                 </button>
                 <button className='buttonProfile'> 
-                Register
+                Message
                 </button>
 
+            </div>
+            <div className="horizontal-line"></div>
+            <div className="streakProfile">
+                <p>This is the text inside the streak profile div.</p>
             </div>
             
         </div>
