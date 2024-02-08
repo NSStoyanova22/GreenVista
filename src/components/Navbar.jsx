@@ -4,7 +4,7 @@ import forum from '../../public/forum-icon.svg'
 import chat from '../../public/chat-icon.svg'
 
 
-export const Navbar = () => {
+export const Navbar = ({ children }) => {
     return(
         <nav>
             <ul>
