@@ -1,76 +1,68 @@
+// Import React, useState for state management
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../../styles/ChatBot.css'
+import '../../styles/ChatBot.css'; // Import the CSS for styling
 
 const ChatBot = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false); // State to toggle chat window
   const [messages, setMessages] = useState([]);
-  const [inputText, setInputText] = useState('');
+  const [userInput, setUserInput] = useState('');
 
-  const toggleChat = () => setIsOpen(!isOpen);
-  const handleInputChange = (event) => setInputText(event.target.value);
-
-  // Function to send a message when Enter is pressed
-  const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
-      sendMessage();
-    }
+  // Toggle chat window visibility
+  const toggleChatWindow = () => {
+    setIsVisible(!isVisible);
   };
 
-  const sendMessage = async () => {
-    if (inputText.trim() === '') return;
-    const userMessage = { sender: 'user', text: inputText };
-    setMessages((prevMessages) => [...prevMessages, userMessage]);
 
-    const botResponse = await getBotResponse(inputText);
-    setMessages((prevMessages) => [...prevMessages, { sender: 'bot', text: botResponse }]);
-    setInputText('');
-  };
+  // Function to handle sending messages to OpenAI
+  const sendMessage = async (event) => {
+    event.preventDefault();
+    const userMessage = userInput;
+    // Prevent sending empty messages
+    if (!userMessage.trim()) return;
+    const updatedMessages = [...messages, { from: 'user', text: userMessage }];
+    setMessages(updatedMessages);
+    setUserInput('');
 
-  const getBotResponse = async (input) => {
     try {
-      const response = await axios.post(process.env.REACT_APP_OPENAI_API_ENDPOINT, {
-        prompt: input,
-        max_tokens: 150,
+      const response = await axios.post('https://api.openai.com/v1/chat/completions', {
+        model: "gpt-3.5-turbo",
+        messages: updatedMessages.map(m => ({ role: m.from === 'user' ? 'user' : 'assistant', content: m.text })),
       }, {
         headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${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}`
+          'Authorization': `Bearer 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`
         }
       });
-      return response.data.choices[0].text;
-    } catch (error) {
-      console.error('Error fetching chatbot response:', error);
-      return 'Hi! :)';
+
+      const botMessage = response.data.choices[0].message.content;
+    setMessages([...updatedMessages, { from: 'bot', text: botMessage }]);
+  } catch (error) {
+      console.error('Error sending message to OpenAI:', error);
+      return 'Sorry, I have a problem responding to this.'; 
     }
   };
 
   return (
     <div className="chatbot-container">
-      <div className={`chatbot-icon ${isOpen ? 'hide' : ''}`} onClick={toggleChat}>
-        Chat
-      </div>
-      {isOpen && (
+      <button className="circle-button" onClick={toggleChatWindow}>Chat</button>
+      {isVisible && (
         <div className="chat-window">
-          <div className="chat-header">
-            <button onClick={toggleChat} className='closeBtn'>Close</button>
-          </div>
           <div className="messages">
-            {messages.map((msg, index) => (
-              <div key={index} className={`message ${msg.sender}`}>
-                {msg.text}
+            {messages.map((message, index) => (
+              <div key={index} className={`message ${message.from}`}>
+                {message.text}
               </div>
             ))}
           </div>
-          <div className="input-area">
+          <form onSubmit={sendMessage}>
             <input
               type="text"
-              value={inputText}
-              onChange={handleInputChange}
-              onKeyPress={handleKeyPress} // Listen for Enter key press here
+              value={userInput}
+              onChange={(e) => setUserInput(e.target.value)}
+              placeholder="Say something..."
             />
-            <button onClick={sendMessage} className='sendBtn'>Send</button>
-          </div>
+            <button type="submit">Send</button>
+          </form>
         </div>
       )}
     </div>
