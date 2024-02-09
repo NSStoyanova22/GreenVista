@@ -13,6 +13,7 @@
     "@auth/express": "^0.5.0",
     "axios": "^1.6.5",
     "dotenv": "^16.3.1",
+    "i": "^0.3.7",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.3",
     "openai": "^4.25.0",

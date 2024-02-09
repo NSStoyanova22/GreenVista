@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.circleProfile{
+    width: 14rem;
+    height: 14rem;
+    border-radius: 50%;
+    background-color: rgb(50, 73, 52);
+    
+}
+
+.profileWeb{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.profileDetails{
+    padding-top: 8rem ;
+    color: rgb(61, 75, 59);
+    display: flex;
+    flex-direction: row;
+    font-size: 2rem;
+    gap: 17rem;
+}
+.buttonsProfile{
+  margin-left: 30rem;
+}
+.buttonProfile{
+    background-color: #4F6F52;
+    border: 1px solid #4F6F52;
+    border-radius: 1.1rem;
+    color: #f7f1e7;
+    font-weight: 700;
+    padding: 0.2rem 1.2rem;
+    user-select: none;
+    margin-top: 5rem;
+    padding: 2rem 5rem 2rem 5rem;
+    font-size: 2rem;
+    margin-left: 11rem;
+}
+.buttonProfile:hover {
+    background-color: #445846;
+    border-color: #2d382e;
+  }
+  
+  .buttonProfile:active:hover,
+  .buttonProfile:focus:hover,
+  .buttonProfile:focus {
+    background-color: #445846;
+    box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+    color: #ece7e3;
+  }
+  .buttonProfile:active {
+    background-color: #68816a;
+    box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+    color: #f0e7e2;
+  }
+  .horizontal-line {
+    background-color: rgb(132, 155, 132);
+    height: 0.7rem; 
+    width: 60%; 
+    margin: 0 auto; 
+    margin-top: 10rem;
+    
+  }
+  .streakProfile {
+    width: 50rem; 
+    height: 50rem;
+    padding: 5rem;
+    margin: 10rem auto; 
+    border-top-left-radius: 2rem; 
+    border-bottom-left-radius: 2rem; 
+    border-top-right-radius: 2rem; 
+    border-bottom-right-radius: 2rem; 
+    box-shadow: 0 0rem 10rem rgba(0, 0, 0, 0.2); /* Adjust shadow as needed */
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* Work on text inside, heather, streak photo, etc. learn about the js of the cards and try and add something similar to this to the text of the profile */
+  }
+  .textStreak{
+    font-family: "Montserrat", sans-serif;
+    color: #3e533f;
+    font-weight: 900;
+    margin-top: 5rem;
+  }
+  .streakProfile > div > img{
+    height: 20rem;
+  }
+  
