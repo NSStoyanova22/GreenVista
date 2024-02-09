@@ -1,4 +1,5 @@
 import React from "react";
+
 import home from '../../public/home-icon.svg'
 import forum from '../../public/forum-icon.svg'
 import chat from '../../public/chat-icon.svg'
@@ -10,7 +11,7 @@ export const Navbar = ({ children }) => {
             <ul>
                 <li>
                     {/* svurji home s app.jsx */}
-                    <a href="#">
+                    <a href="/">
                         <img src={home} alt="" />
                     </a>
                 </li>

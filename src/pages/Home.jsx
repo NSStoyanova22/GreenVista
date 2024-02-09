@@ -27,7 +27,7 @@ export default function Home() {
         {cards.map((card) => {
           return <>
             <SwiperSlide key={card.idea}>
-              <Slide {...card} />
+              <Slide idea={card.idea} info={card.info} />
             </SwiperSlide>
           </>
         })}

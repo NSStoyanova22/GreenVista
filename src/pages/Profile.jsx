@@ -1,7 +1,10 @@
 import React from "react";
-import { Navbar } from "../components/Navbar";
+
 import '../../styles/Profile.css'
 import { ComponentWithChatbot } from "../components/ComponentWithChatbot";
+import streak from '../../public/streak.svg'
+
+import profiles from "../misc/profiles";
 
 export const Profile = () => {
     return (
@@ -12,10 +15,15 @@ export const Profile = () => {
           
             <div className="profileDetails">
                 <div className="circleProfile"></div>
-                <div className="profileNames">
-                    <h1>Nicole Stoyanova</h1>
-                    <h3>@nicolezzz</h3>
-                </div>
+                {profiles.map((profile) => {
+                    return<>
+                    <div className="profileNames" key={profile.name}>
+                        <h1>{ profile.name ?? "----"}</h1>
+                        <h3>{ profile.username ?? "---" }</h3>
+                    </div>
+                    </> 
+                })}
+               
             </div>
             <div className="buttonsProfile">
                 <button className='buttonProfile'> 
@@ -27,10 +35,21 @@ export const Profile = () => {
 
             </div>
             <div className="horizontal-line"></div>
-            <div className="streakProfile">
-                <p>This is the text inside the streak profile div.</p>
+            {profiles.map((profile) => {
+                    return<>
+            <div className="streakProfile" key={profile.name} >
+                <div>
+                <h1 className="textStreak">{ profile.name ?? "---" }'s streak!</h1>
+                </div>
+                <div>
+                <img src={streak} alt="" />
+                </div>
+                <div>
+                <h1 className="textStreak" >you up for a competition?</h1>
+                </div>
             </div>
-            
+            </>
+            })}
         </div>
         </ComponentWithChatbot>
 
