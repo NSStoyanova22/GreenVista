@@ -30,7 +30,7 @@ const ChatBot = () => {
         messages: updatedMessages.map(m => ({ role: m.from === 'user' ? 'user' : 'assistant', content: m.text })),
       }, {
         headers: {
-          'Authorization': `Bearer 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`
+          'Authorization': `Bearer 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`
         }
       });
 
