@@ -7,3 +7,41 @@
     /* height: 100vh; */
     flex-direction: column;
 }
+.postHeader{
+    width: 100vw;
+    height: 60rem;
+    background-color: #3e533f;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.uploadedImage{
+    border-radius: 1rem;
+    width: 23%;
+}
+
+.username{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+}
+
+.postBtn,.cancelBtn{
+    background-color: #4F6F52;
+    border: 1px solid #4F6F52;
+    border-radius: 1.1rem;
+    color: #f7f1e7;
+    font-weight: 700;
+    padding: 0.2rem 1.2rem;
+    user-select: none;
+    height: 4rem;
+    width: 10rem;
+    cursor: pointer;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.cancelBtn{
+    margin-left: 5rem;
+}
