@@ -3,8 +3,10 @@ import React, { useState } from "react"
 import Screenshot from '../../public/Computer-Phone-screenshot.svg'
 import { loginUser } from '../../utils/HTTPServise';
 import { forumDataList } from '../../utils/HTTPServise';
+import { useNavigate } from 'react-router-dom';
 
 export const LogIn = () => {
+    const navigate = useNavigate(); 
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
 
@@ -14,17 +16,20 @@ export const LogIn = () => {
             password: pass
         }
         console.log(userData)
-        forumDataList().then((res) => {
-            if(res) {
-                console.log(res)
-            }
-        })
-        // loginUser(userData).then((result) => {
-        //     if(result && result !== '') {
-        //         // result.status
-        //         // 200 ok || 401 ....
+        // forumDataList().then((res) => {
+        //     if(res) {
+        //         console.log(res)
         //     }
         // })
+        loginUser(userData).then((result) => {
+            if(result && result !== '') {
+                // result.status
+                // 200 ok || 401 ....
+                console.log(result)
+                localStorage.setItem('userData', JSON.stringify(result.data.user))
+                navigate('/');
+            }
+        })
     }
 
     const onLoginChange = (e) => {

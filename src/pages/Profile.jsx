@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import '../../styles/Profile.css'
 import { ComponentWithChatbot } from "../components/ComponentWithChatbot";
@@ -7,6 +7,7 @@ import streak from '../../public/streak.svg'
 import profiles from "../misc/profiles";
 
 export const Profile = () => {
+
     return (
          <ComponentWithChatbot>
         <div className="profileWeb">

@@ -1,15 +1,31 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const mongoose = require('mongoose');
 var cors = require('cors');
-const pgRouter = require('./databases/postgres.js')
+const { Signup, Login } = require("./AuthController");
+const cookieParser = require("cookie-parser");
+const bodyParser = require('body-parser');
+//mongodb://localhost:27017
+const uri = "mongodb+srv://GreenVista:GreenVista123@cluster0.xswqdin.mongodb.net/?retryWrites=true&w=majority";
+//const pgRouter = require('./databases/postgres.js')
 
+mongoose.connect(uri)
+.then(() => console.log("MongoDB is  connected successfully"))
+.catch((err) => console.error(err));
+
+app.use(bodyParser.json());
 app.use(cors());
 //cors({ origin : [ "http://localhost:5174"]})
+app.use(cookieParser());
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
+
+app.post("/signup", Signup);
+
+app.post("/login", Login);
 
 app.get('/forumDataList', (req, res) => {
     console.log(req);

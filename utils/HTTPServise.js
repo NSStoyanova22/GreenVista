@@ -3,7 +3,23 @@ const baseUrl = 'http://localhost:3000/';
 
 export const loginUser = (userData) => {
     const url = baseUrl + 'login';
-    return axios.post(url, { userData })
+    return axios.post(url, { userData }).then((res) => {
+        return res;
+    });
+}
+
+export const registerUser = (userData) => {
+    const url = baseUrl + 'signup';
+    return axios.post(url, { userData }).then((res) => {
+        return res;
+    });
+}
+
+export const logOut = (userData) => {
+    const url = baseUrl + 'logout';
+    return axios.get(url).then((res) => {
+        return res;
+    });
 }
 
 export const forumDataList = () => {
@@ -15,3 +31,4 @@ export const forumDataList = () => {
         return res;
     });
 }
+

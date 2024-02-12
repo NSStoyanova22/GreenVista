@@ -1,11 +1,28 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 import home from '../../public/home-icon.svg'
 import forum from '../../public/forum-icon.svg'
 import chat from '../../public/chat-icon.svg'
+import { useNavigate } from 'react-router-dom';
 
 
 export const Navbar = ({ children }) => {
+    const navigate = useNavigate(); 
+    const [userName, setUserName] = useState('');
+    useEffect(() =>{
+        if(localStorage.getItem('userData') && localStorage.getItem('userData') !== 'null') {
+            const user = JSON.parse(localStorage.getItem('userData'));
+            //console.log(user.username)
+            setUserName(user.username)
+        }
+    }, [])
+
+    const logout = () => {
+        localStorage.setItem('userData', null);
+        window.location.reload()
+        // TODO: logout user server side
+    }
+
     return(
         <nav>
             <ul>
@@ -30,8 +47,18 @@ export const Navbar = ({ children }) => {
                     </a>
                 </li>
                 <li>
-                    <a>profile</a>
+                    <a>{userName !== '' ? userName : ''}</a>
                 </li>
+                {userName !== '' ? (
+                    <li>
+                        <span onClick={logout}>Logout</span>
+                    </li>
+                ) : (
+                    <li>
+                        <a href="/login">Login</a>
+                    </li>
+                )}
+                
             </ul>
     </nav>
     )
