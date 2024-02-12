@@ -80,7 +80,6 @@
 
 .register-button:active {
   background-color: #68816a;
-  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
   color: #f0e7e2;
 }
 
@@ -93,7 +92,6 @@
 .register-button:focus:hover,
 .register-button:focus {
   background-color: #445846;
-  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
   color: #ece7e3;
 }
 .signin-button{

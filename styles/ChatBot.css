@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 .chatbot-container {
     position: fixed;
     bottom: 10px;
@@ -8,15 +9,19 @@
   .chatbot-icon {
     background-color: #4F6F52;
     color: white;
-    padding: 31px 28px;
+    height: 8rem;
+    width: 9rem;
     border-radius: 50%;
     cursor: pointer;
     text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
   }
   
   .chat-window {
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding-bottom: 2rem ;
     width: 35rem;
     height: 45rem;
     position: absolute;

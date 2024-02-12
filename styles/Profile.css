@@ -39,19 +39,17 @@
 }
 .buttonProfile:hover {
     background-color: #445846;
-    border-color: #2d382e;
+    
   }
   
   .buttonProfile:active:hover,
   .buttonProfile:focus:hover,
   .buttonProfile:focus {
     background-color: #445846;
-    box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
     color: #ece7e3;
   }
   .buttonProfile:active {
     background-color: #68816a;
-    box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
     color: #f0e7e2;
   }
   .horizontal-line {
@@ -71,7 +69,7 @@
     border-bottom-left-radius: 2rem; 
     border-top-right-radius: 2rem; 
     border-bottom-right-radius: 2rem; 
-    box-shadow: 0 0rem 10rem rgba(0, 0, 0, 0.2); /* Adjust shadow as needed */
+  
     font-size: 2.5rem;
     display: flex;
     justify-content: center;
