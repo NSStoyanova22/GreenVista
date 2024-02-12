@@ -30,7 +30,7 @@ const ChatBot = () => {
         messages: updatedMessages.map(m => ({ role: m.from === 'user' ? 'user' : 'assistant', content: m.text })),
       }, {
         headers: {
-          'Authorization': `Bearer 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`
+          'Authorization': `Bearer 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`
         }
       });
 
@@ -44,7 +44,7 @@ const ChatBot = () => {
 
   return (
     <div className="chatbot-container">
-      <button className="circle-button" onClick={toggleChatWindow}>Chat</button>
+      <button className="chatbot-icon" onClick={toggleChatWindow}>Chat</button>
       {isVisible && (
         <div className="chat-window">
           <div className="messages">
@@ -60,8 +60,9 @@ const ChatBot = () => {
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
               placeholder="Say something..."
+
             />
-            <button type="submit">Send</button>
+            <button type="sumbit" className='sendBtn'>Send</button>
           </form>
         </div>
       )}
