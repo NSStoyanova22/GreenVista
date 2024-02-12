@@ -1,6 +1,6 @@
 import React from "react";
 
-export const PostPictureHeader = () => {
+export const PostPictureHeader = ({ uploadedPhotoUrl }) => {
     return(
         <div className="forumPage">
             {uploadedPhotoUrl && (
@@ -14,5 +14,5 @@ export const PostPictureHeader = () => {
             </div>
             )}
         </div>
-    )
+    );
 }
