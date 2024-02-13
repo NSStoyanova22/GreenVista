@@ -10,10 +10,12 @@ export const Navbar = ({ children }) => {
     const navigate = useNavigate(); 
     const [userName, setUserName] = useState('');
     useEffect(() =>{
-        if(localStorage.getItem('userData') && localStorage.getItem('userData') !== 'null') {
+        if(localStorage.getItem('userData') && localStorage.getItem('userData') !== 'undefined' && localStorage.getItem('userData') !== undefined) {
             const user = JSON.parse(localStorage.getItem('userData'));
             //console.log(user.username)
-            setUserName(user.username)
+            if(user) {
+                setUserName(user.username)
+            } 
         }
     }, [])
 

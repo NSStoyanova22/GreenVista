@@ -32,3 +32,10 @@ export const forumDataList = () => {
     });
 }
 
+export const createPost = (data) => {
+    const url = baseUrl + 'createPost';
+    return axios.post(url, { data }).then((res) => {
+        return res;
+    });
+}
+

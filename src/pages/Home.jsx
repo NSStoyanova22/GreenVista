@@ -25,11 +25,11 @@ export default function Home() {
         className="mySwiper"
       >
         {cards.map((card) => {
-          return <>
+          return (
             <SwiperSlide key={card.idea}>
               <Slide idea={card.idea} info={card.info} />
             </SwiperSlide>
-          </>
+          )
         })}
         <SwiperSlide>
           <p className="ecoIdeas">New ideas coming soon!</p>

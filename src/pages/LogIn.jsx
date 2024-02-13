@@ -6,11 +6,13 @@ import { forumDataList } from '../../utils/HTTPServise';
 import { useNavigate } from 'react-router-dom';
 
 export const LogIn = () => {
+    
     const navigate = useNavigate(); 
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
 
-    const login = () => {
+    const login = (e) => {
+        e.preventDefault();
         const userData = {
             email: email,
             password: pass

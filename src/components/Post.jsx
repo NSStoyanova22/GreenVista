@@ -1,12 +1,16 @@
 import React from "react";
 
-export const Post = () => {
+export const Post = (props) => {
     return(
         <div className="post">
-            <h1>O @username</h1>
-            <div className="picturePost"></div>
-            <h1>ChallengeName</h1>
-            <h1>GivenHeading</h1>
+            <h1>{props.username}</h1>
+            <div className="picturePost">
+                {props.imgUrl !==  "" ? (
+                    <img src={props.imgUrl} alt="post image" />
+                ) : null}
+            </div>
+            <h1>{props.challengeName}</h1>
+            <h1>{props.givenHeading}</h1>
         </div>
     )
 }

@@ -4,6 +4,7 @@ const port = 3000;
 const mongoose = require('mongoose');
 var cors = require('cors');
 const { Signup, Login } = require("./AuthController");
+const { CreatePost} = require("./PostController");
 const cookieParser = require("cookie-parser");
 const bodyParser = require('body-parser');
 //mongodb://localhost:27017
@@ -14,7 +15,7 @@ mongoose.connect(uri)
 .then(() => console.log("MongoDB is  connected successfully"))
 .catch((err) => console.error(err));
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '50mb'}));
 app.use(cors());
 //cors({ origin : [ "http://localhost:5174"]})
 app.use(cookieParser());
@@ -26,6 +27,8 @@ app.get('/', (req, res) => {
 app.post("/signup", Signup);
 
 app.post("/login", Login);
+
+app.post("/createPost", CreatePost);
 
 app.get('/forumDataList', (req, res) => {
     console.log(req);
