@@ -43,7 +43,7 @@ export const Register = () => {
             <img src={Screenshot} className='img-phonelaptop' alt="" />
             </div>
            
-                        <div className="form">
+                        <div className="form form1">
                 <h2>Register</h2>
                 <form action="#">
                     <div className="input-box">
@@ -59,19 +59,12 @@ export const Register = () => {
                     <label>Password</label>
                         <input type="password" id="reg-pass" required="" onChange={onRegisterChange} />
                     </div>
-
-                
-                        <label>
-                        <input type="checkbox" />
-                        Remember me
-                        </label>
-                        <p>
-                        Already have an account?{" "}
-                        <br />
-                        <button className='register-button'> 
-                            < a href="/LogIn" className="register">Log In</a>
-                        </button>
-                        </p>
+                    
+                        <a href="/Login" className='dontHaveAcc'>
+                             <p>
+                             Already have an account?{" "}
+                            </p>
+                           </a>
                     <button className="register-button signin-button" role="button" onClick={register}>
                         Register
                     </button>
