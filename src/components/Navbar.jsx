@@ -47,15 +47,15 @@ export const Navbar = ({ children }) => {
                     </a>
                 </li>
                 <li>
-                    <a>{userName !== '' ? userName : ''}</a>
+                    <a className="loginNav">{userName !== '' ? userName : ''}</a>
                 </li>
                 {userName !== '' ? (
                     <li>
-                        <span onClick={logout}>Logout</span>
+                        <span className="loginNav" onClick={logout}>Logout</span>
                     </li>
                 ) : (
                     <li>
-                        <a href="/login">Login</a>
+                        <a href="/login" className="loginNav">Log In</a>
                     </li>
                 )}
                 
