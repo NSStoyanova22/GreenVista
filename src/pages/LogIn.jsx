@@ -52,6 +52,7 @@ export const LogIn = () => {
                
                             <div className="form">
                     <h2>Sign In</h2>
+                    <form action="#">
                         <div className="input-box">
                         <label>Email</label>
                             <input type="email" required="" id="login-email" onChange={onLoginChange} />
@@ -61,20 +62,16 @@ export const LogIn = () => {
                             <input type="password" required="" id="login-pass" onChange={onLoginChange} />
                         </div>
                     
-                            <label>
-                            <input type="checkbox" />
-                            Remember me
-                            </label>
-                            <p>
+                           <a href="/Register" className='dontHaveAcc'>
+                             <p>
                             Don't have an account?{" "}
-                            <br />
-                            <button className='register-button'> 
-                                < a href="/Register" className="register">Register</a>
-                            </button>
                             </p>
+                           </a>
+                           
                         <button onClick={login} className="register-button signin-button" role="button">
                             Sign In
                         </button>
+                    </form>
                 </div>
 
             </div>
