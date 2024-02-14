@@ -61,15 +61,14 @@
     
   }
   .streakProfile {
+    border: 1px  #4F6F52;
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.5);
     width: 50rem; 
     height: 50rem;
     padding: 5rem;
     margin: 10rem auto; 
-    border-top-left-radius: 2rem; 
-    border-bottom-left-radius: 2rem; 
-    border-top-right-radius: 2rem; 
-    border-bottom-right-radius: 2rem; 
-  
+    border-radius: 2rem;
+    border-color: #3e533f;
     font-size: 2.5rem;
     display: flex;
     justify-content: center;
