@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { createPost } from "../../utils/HTTPServise";
 
 
-export const PostPictureHeader = ({ uploadedPhotoUrl }) => {
+export const PostPictureHeader = ( props ) => {
     const [imgUrl, setImgUrl] = useState('');
     const [username, setUserName] = useState('');
     const [challengeName, setChallengeName] = useState('');
@@ -51,11 +51,11 @@ export const PostPictureHeader = ({ uploadedPhotoUrl }) => {
 
     return(
         <div className="forumPage">
-            {uploadedPhotoUrl && (
+            {props.uploadedPhotoUrl && (
             <div className="postHeader">
                 <p className="username">@username</p>
-                <img src={uploadedPhotoUrl} alt="Uploaded" style={{ maxWidth: '100%', height: 'auto' }} className="uploadedImage"/>
-                <p className="username">Challenge Name</p>
+                <img src={props.uploadedPhotoUrl} alt="Uploaded" style={{ maxWidth: '100%', height: 'auto' }} className="uploadedImage"/>
+                <p className="username">{props.challengeName}</p>
                 <p className="username">Given Heading</p>
                 <input type="text" onChange={onDataChange} id="gName" />
                 <button className="postBtn" onClick={createNewPost}>Post</button>

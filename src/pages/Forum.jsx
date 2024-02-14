@@ -8,12 +8,16 @@ import '../../styles/Forum.css';
 
 export const Forum = () => {
   const uploadedPhotoUrl = localStorage.getItem('uploadedPhoto');
+  const props = { 
+    uploadedPhotoUrl: uploadedPhotoUrl,
+
+  }
   // TODO: get postsArray from the database!!!
   const postsArray = [1,2,3];
   return (
     <ComponentWithChatbot>
       <div className="forumPage">
-        <PostPictureHeader uploadedPhotoUrl={uploadedPhotoUrl} />
+        <PostPictureHeader props={props} />
         {postsArray.length > 0 ? (
           <div className="posts">
             {postsArray.map((post) => {
