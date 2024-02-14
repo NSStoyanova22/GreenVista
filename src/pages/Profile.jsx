@@ -4,7 +4,6 @@ import '../../styles/Profile.css'
 import { ComponentWithChatbot } from "../components/ComponentWithChatbot";
 import streak from '../../public/streak.svg'
 
-import profiles from "../misc/profiles";
 
 export const Profile = () => {
 
@@ -16,14 +15,14 @@ export const Profile = () => {
           
             <div className="profileDetails">
                 <div className="circleProfile"></div>
-                {profiles.map((profile) => {
-                    return<>
-                    <div className="profileNames" key={profile.name}>
-                        <h1>{ profile.name ?? "----"}</h1>
-                        <h3>{ profile.username ?? "---" }</h3>
-                    </div>
-                    </> 
-                })}
+              
+                   
+                 <div className="profileNames" >
+                         <h1>n</h1>
+                        <h3>hey</h3>
+                 </div>
+             
+             
                
             </div>
             <div className="buttonsProfile">
@@ -36,11 +35,10 @@ export const Profile = () => {
 
             </div>
             <div className="horizontal-line"></div>
-            {profiles.map((profile) => {
-                    return<>
-            <div className="streakProfile" key={profile.name} >
+           
+            <div className="streakProfile" >
                 <div>
-                <h1 className="textStreak">{ profile.name ?? "---" }'s streak!</h1>
+                <h1 className="textStreak">N's streak!</h1>
                 </div>
                 <div>
                 <img src={streak} alt="" />
@@ -49,8 +47,7 @@ export const Profile = () => {
                 <h1 className="textStreak" >you up for a competition?</h1>
                 </div>
             </div>
-            </>
-            })}
+           
         </div>
         </ComponentWithChatbot>
 
