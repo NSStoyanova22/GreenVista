@@ -20,13 +20,13 @@ export const YourProfile = (props) => {
     }, [])
     return (
          <ComponentWithChatbot>
-        <div className="profileWeb">
+        <div className="YourProfileWeb">
             <h1 className="profileHeading">My profile</h1>
            
           
-            <div className="profileDetails">
-                <div className="circleProfile"></div>
-                <h1>{userName !== '' ? userName : ''}</h1>
+            <div className="YourProfileDetails">
+                <div className="circleYourProfile"></div>
+                <h1 className="UsernameHeading">{userName !== '' ? userName : ''}</h1>
                 <h3>{props.email}</h3>
                 
                
