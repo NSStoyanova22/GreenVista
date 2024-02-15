@@ -54,7 +54,7 @@ const ChatBot = () => {
               </div>
             ))}
           </div>
-          <form onSubmit={sendMessage}>
+          <form onSubmit={sendMessage} className='input-area'>
             <input
               type="text"
               value={userInput}
