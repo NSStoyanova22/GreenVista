@@ -1,12 +1,23 @@
-import React, { useEffect } from "react";
+import React, {useEffect, useState} from "react";
 
 import '../../styles/YourProfile.css'
 import { ComponentWithChatbot } from "../components/ComponentWithChatbot";
 import streak from '../../public/streak.svg'
+import { useNavigate } from 'react-router-dom';
 
 
 export const YourProfile = (props) => {
-
+    const navigate = useNavigate(); 
+    const [userName, setUserName] = useState('');
+    useEffect(() =>{
+        if(localStorage.getItem('userData') && localStorage.getItem('userData') !== 'undefined' && localStorage.getItem('userData') !== undefined) {
+            const user = JSON.parse(localStorage.getItem('userData'));
+            //console.log(user.username)
+            if(user) {
+                setUserName(user.username)
+            } 
+        }
+    }, [])
     return (
          <ComponentWithChatbot>
         <div className="profileWeb">
@@ -15,7 +26,7 @@ export const YourProfile = (props) => {
           
             <div className="profileDetails">
                 <div className="circleProfile"></div>
-                <h1>{props.username}</h1>
+                <h1>{userName !== '' ? userName : ''}</h1>
                 <h3>{props.email}</h3>
                 
                
@@ -29,13 +40,13 @@ export const YourProfile = (props) => {
           
             <div className="streak" >
                 <div>
-                <h1 className="streakText">{props.username}'s streak!</h1>
+                <h1 className="streakText">{userName !== '' ? userName : ''}'s streak!</h1>
                 </div>
                 <div>
                 <img src={streak} alt="" />
                 </div>
                 <div>
-                <h1 className="streakText" >you up for a competition?</h1>
+                <h1 className="streakText" >Keep going!</h1>
                 </div>
             </div>
            

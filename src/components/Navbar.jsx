@@ -49,7 +49,7 @@ export const Navbar = ({ children }) => {
                     </a>
                 </li>
                 <li>
-                    <a href="../pages/YourProfile.jsx" className="loginNav">{userName !== '' ? userName : ''}</a>
+                    <a href="/YourProfile" className="loginNav">{userName !== '' ? userName : ''}</a>
                 </li>
                 {userName !== '' ? (
                     <li>
