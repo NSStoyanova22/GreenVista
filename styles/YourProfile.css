@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-.circleYourProfile{
-    width: 14rem;
-    height: 14rem;
+.circleProfile{
+    width: 24rem;
+    height: 24rem;
     border-radius: 50%;
     background-color: rgb(50, 73, 52);
     
@@ -92,7 +92,6 @@
     color: #445846;
     font-weight: 900;
 }
-
 .UsernameHeading{
   font-family: "Montserrat", sans-serif;
   color: #3e533f;
