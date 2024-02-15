@@ -22,7 +22,7 @@ export const YourProfile = (props) => {
          <ComponentWithChatbot>
         <div className="YourProfileWeb">
             <h1 className="profileHeading">My profile</h1>
-           
+            <div className="horizontal-lineHeading"></div>
           
             <div className="YourProfileDetails">
                 <div className="circleYourProfile"></div>

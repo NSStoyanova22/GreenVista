@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 import home from '../../public/home-icon.svg'
 import forum from '../../public/forum-icon.svg'
 import chat from '../../public/chat-icon.svg'
+import streak from '../../public/streak.svg'
 import { useNavigate } from 'react-router-dom';
 
 
@@ -41,11 +42,16 @@ export const Navbar = ({ children }) => {
                 </li>
                 
                 <li>
-                    <a href="#" className="nav-title">GreenVista</a>
+                    <a href="/" className="nav-title">GreenVista</a>
                 </li>
                 <li>
                     <a>
                         <img src={chat} alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="/YourProfile">
+                        <img src={streak} alt="" />
                     </a>
                 </li>
                 <li>
