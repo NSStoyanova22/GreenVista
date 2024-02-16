@@ -55,7 +55,7 @@ export const PostPictureHeader = ( props ) => {
             <div className="postHeader">
                 <p className="username">@username</p>
                 <img src={props.uploadedPhotoUrl} alt="Uploaded" style={{ maxWidth: '100%', height: 'auto' }} className="uploadedImage"/>
-                <p className="username">{props.challengeName}</p>
+                <p className="username"></p>
                 <p className="username">Given Heading</p>
                 <input type="text" onChange={onDataChange} id="gName" />
                 <button className="postBtn" onClick={createNewPost}>Post</button>
