@@ -9,12 +9,14 @@ import { useNavigate } from 'react-router-dom';
 export const YourProfile = (props) => {
     const navigate = useNavigate(); 
     const [userName, setUserName] = useState('');
+    const [userEmail, setUserEmail] = useState('');
     useEffect(() =>{
         if(localStorage.getItem('userData') && localStorage.getItem('userData') !== 'undefined' && localStorage.getItem('userData') !== undefined) {
             const user = JSON.parse(localStorage.getItem('userData'));
             //console.log(user.username)
             if(user) {
                 setUserName(user.username)
+                setUserEmail(user.email)
             } 
         }
     }, [])
@@ -26,8 +28,11 @@ export const YourProfile = (props) => {
           
             <div className="YourProfileDetails">
                 <div className="circleYourProfile"></div>
-                <h1 className="UsernameHeading">{userName !== '' ? userName : ''}</h1>
-                <h3>{props.email}</h3>
+                <div>
+                    <h1 className="UsernameHeading">{userName !== '' ? userName : ''}</h1>
+                <h3 className="UsernameHeading" style={{fontStyle:'italic'}}>{userEmail !== '' ? userEmail : ''}</h3>
+                </div>
+                
                 
                
             </div>

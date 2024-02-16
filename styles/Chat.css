@@ -1,56 +1,87 @@
 .messaging-interface {
-    display: flex;
-    height: 100vh;
-  }
-  
+  display: flex;
+  height: 100vh;
+}
+
+.user-list {
+  width: 20rem;
+  background-color: #f5f5f5;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.user {
+  font-size: 1.8rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  border-bottom: 0.1rem solid #1b8b46;
+  transition: background-color 0.3s ease;
+}
+
+.user:hover {
+  background-color: #e2f1df;
+}
+
+.message-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  font-size: 2rem;
+  color: #499760;
+  background-color: #fff;
+  align-items: center; /* Centering the text */
+  justify-content: center; /* Centering the text */
+}
+
+.message-box div {
+  margin-bottom: 1rem;
+}
+
+.message {
+  padding: 1rem;
+  background-color: #eef3f8;
+  border-radius: 1rem;
+  max-width: 7rem;
+}
+
+.sender {
+  align-self: flex-end;
+  background-color: #ffffff;
+}
+
+/* Responsive styles */
+@media (max-width: 48rem) {
   .user-list {
-    width: 200px;
-    background-color: #f5f5f5;
-    padding: 20px;
-    overflow-y: auto;
+    width: 10rem;
   }
+}
+.search-bar {
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem; 
   
-  .user {
-    padding: 10px;
-    cursor: pointer;
-    border-bottom: 1px solid #ddd;
-    transition: background-color 0.3s ease;
-  }
-  
-  .user:hover {
-    background-color: #fafafa;
-  }
-  
-  .message-box {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    font-size: 16px;
-    color: #333;
-    background-color: #fff;
-  }
-  
-  .message-box div {
-    margin-bottom: 10px;
-  }
-  
-  .message {
-    padding: 10px;
-    background-color: #eef3f8;
-    border-radius: 10px;
-    max-width: 70%;
-  }
-  
-  .sender {
-    align-self: flex-end;
-    background-color: #daf1e0;
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .user-list {
-      width: 100px;
-    }
-  }
-  
+}
+
+.search-bar input {
+  padding: 1rem;
+  width: 40rem;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #446447;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #416140;
+}
