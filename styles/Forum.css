@@ -1,13 +1,14 @@
-.forumPage{
+.forumPage {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0;
-    margin: 0;
-    /* height: 100vh; */
+    margin: 0 auto; /* Center the forumPage */
     flex-direction: column;
+    max-width: 100vw; /* Maximum width to prevent overstretching on larger screens */
 }
-.postHeader{
+
+.postHeader {
     width: 100vw;
     height: 60rem;
     background-color: #3e533f;
@@ -15,19 +16,19 @@
     border-radius: 1rem;
 }
 
-.uploadedImage{
+.uploadedImage {
     border-radius: 1rem;
-    width: 23%;
+    width: 23%; /* Width as a percentage of its container */
 }
 
-.username{
+.username {
     color: white;
     font-size: 2rem;
     font-weight: bold;
     font-family: "Montserrat", sans-serif;
 }
 
-.postBtn,.cancelBtn{
+.postBtn, .cancelBtn {
     background-color: #4F6F52;
     border: 1px solid #4F6F52;
     border-radius: 1.1rem;
@@ -42,6 +43,54 @@
     text-align: center;
 }
 
-.cancelBtn{
+.cancelBtn {
     margin-left: 5rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+
+
+    .uploadedImage {
+        width: 40%; /* Larger percentage for smaller screens */
+    }
+
+    .username, .postBtn, .cancelBtn {
+        font-size: 1.5rem; /* Smaller font size for smaller screens */
+    }
+
+    .postBtn, .cancelBtn {
+        width: 8rem; /* Smaller width for buttons */
+        padding: 0.2rem 0.8rem;
+        height: 3rem;
+    }
+
+    .cancelBtn {
+        margin-left: 2rem; /* Less space between buttons on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+
+    .posts, .post {
+        width: calc(100% - 1rem); /* Adjust width to account for padding */
+    }
+
+    .uploadedImage {
+        width: 50%; /* Even larger percentage for very small screens */
+    }
+
+    .username, .postBtn, .cancelBtn {
+        font-size: 1.2rem; /* Even smaller font size for very small screens */
+    }
+
+    .postBtn, .cancelBtn {
+        width: 7rem; /* Further smaller width for buttons */
+        padding: 0.1rem 0.6rem;
+        height: 2.5rem;
+    }
+
+    .cancelBtn {
+        margin-left: 1rem; /* Even less space between buttons on very small screens */
+    }
 }
