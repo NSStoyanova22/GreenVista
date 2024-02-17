@@ -39,3 +39,9 @@ export const createPost = (data) => {
     });
 }
 
+export const getAllPosts = () => {
+    const url = baseUrl + 'posts';
+    return axios.get(url).then((res) => {
+        return res;
+    });
+}

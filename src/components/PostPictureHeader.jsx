@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { createPost } from "../../utils/HTTPServise";
+import { createPost, getAllPosts } from "../../utils/HTTPServise";
 
 
 export const PostPictureHeader = ( props ) => {
@@ -25,7 +25,9 @@ export const PostPictureHeader = ( props ) => {
 
         createPost(data).then((res) => {
             if(res) {
-                console.log("post: " + res);
+                //console.log("post: " + res);
+                //getAllPosts();
+                window.location.reload();
             }
         })
     }
@@ -51,10 +53,10 @@ export const PostPictureHeader = ( props ) => {
 
     return(
         <div className="forumPage">
-            {props.uploadedPhotoUrl && (
+            {props.props.uploadedPhotoUrl && (
             <div className="postHeader">
                 <p className="username">@username</p>
-                <img src={props.uploadedPhotoUrl} alt="Uploaded" style={{ maxWidth: '100%', height: 'auto' }} className="uploadedImage"/>
+                <img src={props.props.uploadedPhotoUrl} alt="Uploaded" style={{ maxWidth: '100%', height: 'auto' }} className="uploadedImage"/>
                 <p className="username"></p>
                 <p className="username">Given Heading</p>
                 <input type="text" onChange={onDataChange} id="gName" />

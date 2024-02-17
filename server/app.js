@@ -1,45 +1,42 @@
-var createError = require("http-errors");
-var express = require("express");
-const { connect } = require("./database");
-const swaggerUi = require("swagger-ui-express");
-const swaggerDocument = require("./swagger");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+const express = require('express');
+const app = express();
+const port = 3000;
+const { mongoConnect } = require('./mongoDbConnection');
+var cors = require('cors');
+const { Signup, Login } = require("./AuthController");
+const { CreatePost, GetAllPosts} = require("./PostController");
+const cookieParser = require("cookie-parser");
+const bodyParser = require('body-parser');
+//mongodb://localhost:27017
+const uri = process.env.MONGO_DB_URI;
+//const pgRouter = require('./databases/postgres.js')
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
+mongoConnect
+.then(() => console.log("MongoDB is  connected successfully"))
+.catch((err) => console.error(err));
 
-var app = express();
-
-// view engine setup
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "jade");
-
-app.use(logger("dev"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(cors());
+//cors({ origin : [ "http://localhost:5174"]})
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
-app.use("/api", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  next(createError(404));
-});
+app.post("/signup", Signup);
 
-// error handler
-app.use(function (err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get("env") === "development" ? err : {};
+app.post("/login", Login);
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render("error");
-});
+app.post("/createPost", CreatePost);
 
-module.exports = app;
+app.get("/posts", GetAllPosts);
+
+app.get('/forumDataList', (req, res) => {
+    console.log(req);
+    res.send('Hello forumDataList!')
+  })
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
