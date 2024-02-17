@@ -3,9 +3,9 @@
     justify-content: center;
     align-items: center;
     padding: 0;
-    margin: 0 auto; /* Center the forumPage */
+    margin: 0 auto; 
     flex-direction: column;
-    max-width: 100vw; /* Maximum width to prevent overstretching on larger screens */
+    max-width: 100vw; 
 }
 
 .postHeader {
@@ -18,7 +18,7 @@
 
 .uploadedImage {
     border-radius: 1rem;
-    width: 23%; /* Width as a percentage of its container */
+    width: 23%; 
 }
 
 .username {
@@ -52,45 +52,45 @@
 
 
     .uploadedImage {
-        width: 40%; /* Larger percentage for smaller screens */
+        width: 40%;
     }
 
     .username, .postBtn, .cancelBtn {
-        font-size: 1.5rem; /* Smaller font size for smaller screens */
+        font-size: 1.5rem; 
     }
 
     .postBtn, .cancelBtn {
-        width: 8rem; /* Smaller width for buttons */
+        width: 8rem; 
         padding: 0.2rem 0.8rem;
         height: 3rem;
     }
 
     .cancelBtn {
-        margin-left: 2rem; /* Less space between buttons on smaller screens */
+        margin-left: 2rem; 
     }
 }
 
 @media (max-width: 480px) {
 
     .posts, .post {
-        width: calc(100% - 1rem); /* Adjust width to account for padding */
+        width: calc(100% - 1rem);
     }
 
     .uploadedImage {
-        width: 50%; /* Even larger percentage for very small screens */
+        width: 50%; 
     }
 
     .username, .postBtn, .cancelBtn {
-        font-size: 1.2rem; /* Even smaller font size for very small screens */
+        font-size: 1.2rem; 
     }
 
     .postBtn, .cancelBtn {
-        width: 7rem; /* Further smaller width for buttons */
+        width: 7rem;
         padding: 0.1rem 0.6rem;
         height: 2.5rem;
     }
 
     .cancelBtn {
-        margin-left: 1rem; /* Even less space between buttons on very small screens */
+        margin-left: 1rem;
     }
 }
