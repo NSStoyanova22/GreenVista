@@ -65,7 +65,7 @@ export const PostPictureHeader = ( props ) => {
     return(
         <div className="forumPage">
             {uploadedImg ? (
-                <div className="postHeader">>
+                <div className="postHeader">
                     <img src={uploadedImg} alt="Uploaded" style={{ maxWidth: '100%', height: 'auto' }} className="uploadedImage"/>
                     <p className="username"></p>
                     <p className="username">Given Heading</p>
