@@ -4,7 +4,7 @@ const port = 3000;
 const { mongoConnect } = require('./mongoDbConnection');
 var cors = require('cors');
 const { Signup, Login, UpdateUserProfile } = require("./AuthController");
-const { CreatePost, GetAllPosts} = require("./PostController");
+const { CreatePost, DeletePost, GetAllPosts} = require("./PostController");
 const cookieParser = require("cookie-parser");
 const bodyParser = require('body-parser');
 //mongodb://localhost:27017
@@ -30,6 +30,8 @@ app.post("/updateUserProfile", UpdateUserProfile);
 app.post("/login", Login);
 
 app.post("/createPost", CreatePost);
+
+app.post("/deletePost", DeletePost);
 
 app.get("/posts", GetAllPosts);
 

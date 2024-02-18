@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
+  created_at: {
+    type: Number,
+    required: false
+  },
   imgUrl: {
     type: String,
     required: [false, "The image url is required"],

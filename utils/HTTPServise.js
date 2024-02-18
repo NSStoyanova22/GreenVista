@@ -39,6 +39,13 @@ export const createPost = (data) => {
     });
 }
 
+export const deletePost = (data) => {
+    const url = baseUrl + 'deletePost';
+    return axios.post(url, data).then((res) => {
+        return res;
+    });
+}
+
 export const getAllPosts = () => {
     const url = baseUrl + 'posts';
     return axios.get(url).then((res) => {
