@@ -45,3 +45,17 @@ export const getAllPosts = () => {
         return res;
     });
 }
+
+export const getChatBotApiKey = () => {
+    const url = baseUrl + 'chatBotKey';
+    return axios.get(url).then((res) => {
+        return res;
+    });
+}
+
+export const updateUserPhoto = (userData) => {
+    const url = baseUrl + 'updateUserProfile';
+    return axios.post(url, { userData }).then((res) => {
+        return res;
+    });
+}

@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 const { mongoConnect } = require('./mongoDbConnection');
 var cors = require('cors');
-const { Signup, Login } = require("./AuthController");
+const { Signup, Login, UpdateUserProfile } = require("./AuthController");
 const { CreatePost, GetAllPosts} = require("./PostController");
 const cookieParser = require("cookie-parser");
 const bodyParser = require('body-parser');
@@ -25,12 +25,34 @@ app.get('/', (req, res) => {
 })
 
 app.post("/signup", Signup);
+app.post("/updateUserProfile", UpdateUserProfile);
 
 app.post("/login", Login);
 
 app.post("/createPost", CreatePost);
 
 app.get("/posts", GetAllPosts);
+
+const getChatbotKey = async function(req, res, next){
+  try {
+    if(req) {
+        const apiKey = process.env.CHAT_API_KEY;
+
+        res
+          .status(201)
+          .json({ success: true, apiKey });
+        next();
+    }
+    else {
+        //console.log(req)
+    }
+    
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+app.get("/chatBotKey", getChatbotKey);
 
 app.get('/forumDataList', (req, res) => {
     console.log(req);

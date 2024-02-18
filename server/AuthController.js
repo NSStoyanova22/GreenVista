@@ -59,3 +59,20 @@ module.exports.Login = async (req, res, next) => {
       console.error(error);
     }
   }
+
+  module.exports.UpdateUserProfile = async (req, res, next) => {
+    try {
+        if(req && req.body && req.body.userData.photo && req.body.userData.email) {
+            const { email, photo } = req.body.userData;
+            const update = {photo: photo};
+            const filter = {email: email};
+            const user = await User.findOneAndUpdate(filter, update);
+            
+             res.status(201).json({ message: "User updated successfully", success: true, user: {username: user.username, email: user.email, photo: photo} });
+             next()
+        }
+      
+    } catch (error) {
+      console.error(error);
+    }
+  }

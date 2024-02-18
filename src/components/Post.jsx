@@ -3,14 +3,14 @@ import React from "react";
 export const Post = (props) => {
     return(
         <div className="post">
-            <h1>{props.username}</h1>
+            <p>{props.username}</p>
             <div className="picturePost">
                 {props.imgUrl !==  "" ? (
                     <img src={props.imgUrl} alt="post image" />
                 ) : null}
             </div>
-            <h1>{props.challengeName}</h1>
-            <h1>{props.givenHeading}</h1>
+            <h2>{props.challengeName}</h2>
+            <h3>{props.givenHeading}</h3>
         </div>
     )
 }

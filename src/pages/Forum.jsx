@@ -14,17 +14,28 @@ export const Forum = () => {
     uploadedPhotoUrl: uploadedPhotoUrl,
 
   }
-  useEffect(() => {
+
+
+  const getPosts = () => {
     getAllPosts().then((res) => {
-      console.log(res)
+      //console.log(res)
       setPosts(res.data.posts);
     })
+  }
+
+  const updatePosts = (posts) => {
+    if(posts) {
+      getPosts();
+    }
+  }
+
+  useEffect(() => {
+    getPosts();
   }, [])
-  const postsArray = [1,2,3];
   return (
     <ComponentWithChatbot>
       <div className="forumPage">
-        <PostPictureHeader props={props} />
+        <PostPictureHeader props={props} updatePosts={updatePosts} />
         {posts.length > 0 ? (
           <div className="posts">
             {posts.map((post) => {

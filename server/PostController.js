@@ -5,7 +5,7 @@ module.exports.CreatePost = async (req, res, next) => {
     if(req && req.body) {
         
         const { imgUrl, username, challengeName, givenHeading } = req.body.data;
-        console.log(req.body.data)
+        //console.log(req.body.data)
         const post = await Post.create({ imgUrl, username, challengeName, givenHeading });
 
         res
@@ -14,7 +14,7 @@ module.exports.CreatePost = async (req, res, next) => {
         next();
     }
     else {
-        console.log(req)
+        //console.log(req)
     }
     
   } catch (error) {

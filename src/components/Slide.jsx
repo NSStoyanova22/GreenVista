@@ -15,10 +15,8 @@ export const Slide = (props) => {
     
           // on reader load somthing...
           reader.onload = () => {
-            // Make a fileInfo Object
-            console.log("Called", reader);
             baseURL = reader.result;
-            console.log(baseURL);
+            //console.log(baseURL);
             resolve(baseURL);
           };
           console.log(fileInfo);
@@ -44,12 +42,19 @@ export const Slide = (props) => {
         }
     };
 
+    const uploadFile = () => {
+      // check for logged user in
+      if(localStorage.getItem('userData')) {
+        document.getElementById('files').click();
+      }
+    }
+
     return (
         <>
             <p className="cardHeading">Today I should...</p>
             <p className="ecoIdeas">{props.idea ?? ""}</p>
             <p className='ecoInfo'>{props.info ?? ""}</p>
-            <label htmlFor="files" className="btn">Take a photo</label>
+            <span className="btn" onClick={uploadFile}>Take a photo</span>
             <input id="files" style={{ visibility: "hidden" }} type="file" onChange={handleFileChange} />
         </>
     )

@@ -7,6 +7,9 @@ export const PostPictureHeader = ( props ) => {
     const [username, setUserName] = useState('');
     const [challengeName, setChallengeName] = useState('');
     const [givenHeading, setGivenHeading] = useState('');
+    const [hiddenPostHeader, setHiddenPostHeader] = useState(false);
+    const [uploadedImg, setUploadedImg] = useState(props.props.uploadedPhotoUrl);
+    const [postMsg, setPostMsg] = useState('');
     const onDataChange = (e) => {
         if(e.target.id === 'gName') {
             setGivenHeading(e.target.value);
@@ -26,8 +29,15 @@ export const PostPictureHeader = ( props ) => {
         createPost(data).then((res) => {
             if(res) {
                 //console.log("post: " + res);
+                
+                setPostMsg('Post created successfully.');
+                // hide header
+                setHiddenPostHeader(true);
+                localStorage.setItem('uploadedPhoto', null);
+                setUploadedImg(null);
                 //getAllPosts();
-                window.location.reload();
+                //window.location.reload();
+                props.updatePosts(true);
             }
         })
     }
@@ -35,6 +45,7 @@ export const PostPictureHeader = ( props ) => {
 
 
     useEffect(() => {
+        //setUploadedImg(null);
         if(localStorage.getItem('userData') && localStorage.getItem('userData') !== 'undefined' && localStorage.getItem('userData') !== undefined) {
             const user = JSON.parse(localStorage.getItem('userData'));
             //console.log(user.username)
@@ -53,17 +64,20 @@ export const PostPictureHeader = ( props ) => {
 
     return(
         <div className="forumPage">
-            {props.props.uploadedPhotoUrl && (
-            <div className="postHeader">
-                <p className="username">@username</p>
-                <img src={props.props.uploadedPhotoUrl} alt="Uploaded" style={{ maxWidth: '100%', height: 'auto' }} className="uploadedImage"/>
-                <p className="username"></p>
-                <p className="username">Given Heading</p>
-                <input type="text" onChange={onDataChange} id="gName" />
-                <button className="postBtn" onClick={createNewPost}>Post</button>
-                <button className="cancelBtn">Cancel</button>
-            </div>
-            )}
+            {uploadedImg ? (
+                <div className="postHeader">
+                    <p className="username">@username</p>
+                    <img src={uploadedImg} alt="Uploaded" style={{ maxWidth: '100%', height: 'auto' }} className="uploadedImage"/>
+                    <p className="username"></p>
+                    <p className="username">Given Heading</p>
+                    <input type="text" onChange={onDataChange} id="gName" />
+                    <button className="postBtn" onClick={createNewPost}>Post</button>
+                    <button className="cancelBtn">Cancel</button>
+                </div>
+            ) : null}
+            {postMsg !== '' ? (
+                <div className="msg-post"><p>{postMsg}</p></div>
+            ): null}
         </div>
     );
 }
