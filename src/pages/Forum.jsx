@@ -7,10 +7,18 @@ import { PostPictureHeader } from "../components/PostPictureHeader";
 
 import '../../styles/Forum.css';
 
-export const Forum = () => {
-  const uploadedPhotoUrl = localStorage.getItem('uploadedPhoto');
+export const Forum = (props) => {
+  let isAdmin = false;
+  const uploadedPhotoUrl = localStorage.getItem('uploadedBase64Photo');
+  if(localStorage.getItem('userData')) {
+    const user = localStorage.getItem('userData');
+    const parsedUser = JSON.parse(user);
+    const userEmail = parsedUser.email;
+    isAdmin = userEmail === 'test@abv.bg' ? true : false;
+  }
+  
   const [posts, setPosts] = useState([]);
-  const props = { 
+  const pictureHeaderProps = { 
     uploadedPhotoUrl: uploadedPhotoUrl,
 
   }
@@ -35,16 +43,19 @@ export const Forum = () => {
   return (
     <ComponentWithChatbot>
       <div className="forumPage">
-        <PostPictureHeader props={props} updatePosts={updatePosts} />
+        <PostPictureHeader props={pictureHeaderProps} updatePosts={updatePosts} />
         {posts.length > 0 ? (
           <div className="posts">
-            {posts.map((post) => {
+            {posts.map((post, index) => {
               return(
                 <Post 
+                  key={index}
                   username={post.username || "O @username"} 
                   imgUrl={post.imgUrl || ""} 
                   challengeName={post.challengeName || "ChallengeName"} 
-                  givenHeading={post.postgivenHeading || "GivenHeading"}  />
+                  givenHeading={post.givenHeading || "GivenHeading"}
+                  postId={post._id}
+                  isAdmin={isAdmin}  />
               )
             })}
           </div>

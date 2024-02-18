@@ -22,7 +22,8 @@ export const Navbar = ({ children }) => {
     }, [])
 
     const logout = () => {
-        localStorage.setItem('userData', null);
+        //localStorage.setItem('userData', null);
+        localStorage.removeItem('userData');
         window.location.reload()
         // TODO: logout user server side
     }
