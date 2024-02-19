@@ -4,13 +4,14 @@ import Screenshot from '../../public/Computer-Phone-screenshot.svg'
 import { loginUser } from '../../utils/HTTPServise';
 import { forumDataList } from '../../utils/HTTPServise';
 import { useNavigate } from 'react-router-dom';
-
+import { getAllPostsByUser } from '../../utils/HTTPServise';
+ 
 export const LogIn = () => {
-    
-    const navigate = useNavigate(); 
+   
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
-
+ 
     const login = (e) => {
         e.preventDefault();
         const userData = {
@@ -24,16 +25,23 @@ export const LogIn = () => {
         //     }
         // })
         loginUser(userData).then((result) => {
-            if(result && result !== '') {
+            if(result && result !== '' && result.data.user) {
                 // result.status
                 // 200 ok || 401 ....
                 console.log(result)
                 localStorage.setItem('userData', JSON.stringify(result.data.user))
-                navigate('/');
+                getAllPostsByUser({id: result.data.user.id}).then((r) => {
+                    const data = r.data.postsLength;
+                    localStorage.setItem('postsLength', JSON.stringify(data))
+                    navigate('/');
+                })
+            }
+            else{
+                console.log(result.data.message)
             }
         })
     }
-
+ 
     const onLoginChange = (e) => {
         e.preventDefault();
         const id = e.target.id;
@@ -44,7 +52,7 @@ export const LogIn = () => {
             setPass(e.target.value);
         }
     }
-
+ 
     return (
         <div className='LogIn'>
             <div className='display'>
@@ -63,7 +71,7 @@ export const LogIn = () => {
                         <label>Password</label>
                             <input type="password" required="" id="login-pass" onChange={onLoginChange} />
                         </div>
-                    
+                   
                            <a href="/Register" className='dontHaveAcc'>
                              <p>
                             Don't have an account?{" "}
@@ -75,11 +83,11 @@ export const LogIn = () => {
                         </button>
                     </form>
                 </div>
-
+ 
             </div>
-          
+         
         </div>
-      
-        
+     
+       
     )
 }

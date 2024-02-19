@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { createPost, getAllPosts } from "../../utils/HTTPServise";
+import { createPost, getAllPosts, getAllPostsByUser } from "../../utils/HTTPServise";
 
 
 export const PostPictureHeader = ( props ) => {
     const [imgUrl, setImgUrl] = useState('');
+    const [userId, setUserId] = useState('');
     const [username, setUserName] = useState('');
     const [challengeName, setChallengeName] = useState('');
     const [givenHeading, setGivenHeading] = useState('');
@@ -18,13 +19,21 @@ export const PostPictureHeader = ( props ) => {
 
     const createNewPost = (e) => {
         e.preventDefault();
+        const userData = localStorage.getItem('userData');
+        let profileImage = '';
+        if(userData && userData !== 'null' && userData !== 'undefined') {
+            const parsedUserdata = JSON.parse(userData);
+            profileImage = parsedUserdata.photo;
+        }
         const data = {
             // imgUrl, username, challengeName, givenHeading 
             created_at: Date.now(),
             imgUrl: imgUrl,
             username: username,
             challengeName: challengeName,
-            givenHeading: givenHeading === '' ? 'Default heading' : givenHeading
+            givenHeading: givenHeading === '' ? '-----' : givenHeading,
+            userId: userId,
+            userPhoto: profileImage
         }
 
         createPost(data).then((res) => {
@@ -40,6 +49,11 @@ export const PostPictureHeader = ( props ) => {
                 //getAllPosts();
                 //window.location.reload();
                 props.updatePosts(true);
+                // getAllPostsByUser({id: userId}).then((r) => {
+                //     const data = r.data.postsLength;
+                //     localStorage.setItem('postsLength', JSON.stringify(data))
+                // })
+                props.updatePostsNumber(true);
             }
         })
     }
@@ -53,6 +67,8 @@ export const PostPictureHeader = ( props ) => {
             //console.log(user.username)
             if(user) {
                 setUserName(user.username)
+                setUserId(user.id)
+
             } 
         }
         if(localStorage.getItem('uploadedBase64Photo') && localStorage.getItem('uploadedBase64Photo') !== 'undefined' && localStorage.getItem('uploadedBase64Photo') !== undefined) {
@@ -71,7 +87,7 @@ export const PostPictureHeader = ( props ) => {
                     <img src={uploadedImg} alt="Uploaded" style={{ maxWidth: '100%', height: 'auto' }} className="uploadedImage"/>
                     <p className="username"></p>
                     <p className="username">Given Heading</p>
-                    <input type="text" onChange={onDataChange} id="gName" />
+                    <input className="headingType" type="text" onChange={onDataChange} id="gName" /> <br />
                     <button className="postBtn" onClick={createNewPost}>Post</button>
                     <button className="cancelBtn">Cancel</button>
                 </div>
@@ -82,3 +98,4 @@ export const PostPictureHeader = ( props ) => {
         </div>
     );
 }
+

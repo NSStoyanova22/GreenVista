@@ -1,27 +1,27 @@
 import axios from 'axios';
 const baseUrl = 'http://localhost:3000/';
-
+ 
 export const loginUser = (userData) => {
     const url = baseUrl + 'login';
     return axios.post(url, { userData }).then((res) => {
         return res;
     });
 }
-
+ 
 export const registerUser = (userData) => {
     const url = baseUrl + 'signup';
     return axios.post(url, { userData }).then((res) => {
         return res;
     });
 }
-
+ 
 export const logOut = (userData) => {
     const url = baseUrl + 'logout';
     return axios.get(url).then((res) => {
         return res;
     });
 }
-
+ 
 export const forumDataList = () => {
     const headers = {
         "Content-Type": "application/json",
@@ -31,38 +31,45 @@ export const forumDataList = () => {
         return res;
     });
 }
-
+ 
 export const createPost = (data) => {
     const url = baseUrl + 'createPost';
     return axios.post(url, { data }).then((res) => {
         return res;
     });
 }
-
+ 
 export const deletePost = (data) => {
     const url = baseUrl + 'deletePost';
     return axios.post(url, data).then((res) => {
         return res;
     });
 }
-
+ 
 export const getAllPosts = () => {
     const url = baseUrl + 'posts';
     return axios.get(url).then((res) => {
         return res;
     });
 }
-
+ 
 export const getChatBotApiKey = () => {
     const url = baseUrl + 'chatBotKey';
     return axios.get(url).then((res) => {
         return res;
     });
 }
-
+ 
 export const updateUserPhoto = (userData) => {
     const url = baseUrl + 'updateUserProfile';
     return axios.post(url, { userData }).then((res) => {
+        return res;
+    });
+}
+ 
+export const getAllPostsByUser = (data) => {
+    const url = baseUrl + 'userPosts';
+    return axios.post(url, data).then((res) => {
         return res;
     });
 }

@@ -5,6 +5,15 @@
     border-radius: 50%;
     background-color: rgb(50, 73, 52);
 }
+.circleYourProfile1{
+  width: 58px;
+  height: 58px;
+  border-radius: 200px;
+  max-width: 100%;
+  margin-right: 2rem;
+    border-radius: 50%;
+    background-color: rgb(50, 73, 52);
+}
 
 .YourProfileWeb{
     display: flex;

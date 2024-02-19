@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+ 
 const userSchema = new mongoose.Schema({
   created_at: {
     type: Number,
@@ -20,8 +20,16 @@ const userSchema = new mongoose.Schema({
   givenHeading: {
     type: String,
     required: [true, "The given heading is required"],
+  },
+  userId: {
+    type: String,
+    required: false,
+  },
+  userPhoto: {
+    type: String,
+    required: false,
   }
 });
-
-
+ 
+ 
 module.exports = mongoose.model("Post", userSchema);

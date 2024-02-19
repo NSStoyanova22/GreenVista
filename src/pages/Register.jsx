@@ -2,11 +2,12 @@ import '../../styles/login.css'
 import React, { useState } from "react";
 import Screenshot from '../../public/Computer-Phone-screenshot.svg';
 import { registerUser } from '../../utils/HTTPServise';
+import { useNavigate } from 'react-router-dom';
 export const Register = () => {
     const [username, setUserName] = useState('');
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
-
+    const navigate = useNavigate();
     const register = (e) => {
         e.preventDefault();
         const userData = {
@@ -18,6 +19,7 @@ export const Register = () => {
         registerUser(userData).then((res) => {
             if(res) {
                 console.log(res)
+                navigate('/');
             }
         })
     }
