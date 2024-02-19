@@ -12,13 +12,11 @@ const router = express.Router()
 // 	port: 5432,
 // })
 
-// or using connection string
 const pool = new Pool({
 	connectionString: process.env.PG_CONNECTION_STRING,
 	ssl: true,
 })
 
-// Define route to get all expenses
 router.get('/expenses', async (req, res) => {
 	try {
 		const query = 'SELECT * FROM expenses'
@@ -29,8 +27,6 @@ router.get('/expenses', async (req, res) => {
 		res.status(500).json({ error: 'Internal server error' })
 	}
 })
-
-// Define route to add a new expense
 router.post('/expenses', async (req, res) => {
 	try {
 		const { name, amount, date } = req.body
@@ -45,7 +41,6 @@ router.post('/expenses', async (req, res) => {
 	}
 })
 
-// Define route to remove an expense
 router.delete('/expenses/:id', async (req, res) => {
 	try {
 		const id = req.params.id
@@ -58,7 +53,6 @@ router.delete('/expenses/:id', async (req, res) => {
 	}
 })
 
-// Define route to update an expense
 router.put('/expenses/:id', async (req, res) => {
 	try {
 		const id = req.params.id

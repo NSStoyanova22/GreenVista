@@ -25,7 +25,6 @@ export const Navbar = ({ children }) => {
         //localStorage.setItem('userData', null);
         localStorage.removeItem('userData');
         window.location.reload()
-        // TODO: logout user server side
     }
 
     return(

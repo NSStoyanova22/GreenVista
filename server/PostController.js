@@ -52,7 +52,7 @@ module.exports.GetAllPosts = async (req, res, next) => {
         
       const collection  = mongoose.connection.db.collection("posts");
       const posts = await collection.find({}).sort({created_at: -1}).toArray(function(err, data){
-          console.log(data); // it will print your collection data
+          console.log(data); 
       });
 
         res

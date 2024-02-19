@@ -32,7 +32,6 @@ export const PostPictureHeader = ( props ) => {
                 //console.log("post: " + res);
                 
                 setPostMsg('Post created successfully.');
-                // hide header
                 setHiddenPostHeader(true);
                 //localStorage.setItem('uploadedPhoto', null);
                 localStorage.removeItem('uploadedPhoto');

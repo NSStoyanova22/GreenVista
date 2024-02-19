@@ -1,33 +1,29 @@
-// Import React, useState for state management
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../../styles/ChatBot.css'; // Import the CSS for styling
+import '../../styles/ChatBot.css';
 import { getChatBotApiKey } from '../../utils/HTTPServise';
 
 const ChatBot = () => {
-  const [isVisible, setIsVisible] = useState(false); // State to toggle chat window
+  const [isVisible, setIsVisible] = useState(false);
   const [messages, setMessages] = useState([]);
   const [userInput, setUserInput] = useState('');
   const [apiKey, setApiKey] = useState('');
-  // Toggle chat window visibility
+
   const toggleChatWindow = () => {
     setIsVisible(!isVisible);
   };
 
   useEffect(() => {
     getChatBotApiKey().then((res) => {
-      //console.log(res);
       const chatBotKey = `Bearer ${res.data.apiKey}`;
       setApiKey(chatBotKey);
   })
   }, [])
 
 
-  // Function to handle sending messages to OpenAI
   const sendMessage = async (event) => {
     event.preventDefault();
     const userMessage = userInput;
-    // Prevent sending empty messages
     if (!userMessage.trim()) return;
     const updatedMessages = [...messages, { from: 'user', text: userMessage }];
     setMessages(updatedMessages);

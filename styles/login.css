@@ -99,13 +99,6 @@
     padding: 2rem 5rem 2rem 5rem;
     font-size: 2rem;
 }
-/* .lineVertical{
-    border-left: 0.5rem solid #f7f1e7;
-    height: 58rem;
-    border-radius: 9%;
-    width: 4rem;
-   
-} */
 .display{
     display: flex;
     text-align: center;

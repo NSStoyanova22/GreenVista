@@ -73,7 +73,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    /* Work on text inside, heather, streak photo, etc. learn about the js of the cards and try and add something similar to this to the text of the profile */
+
   }
   .streakText{
     font-family: "Montserrat", sans-serif;
