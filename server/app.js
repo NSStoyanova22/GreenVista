@@ -44,7 +44,7 @@ const getChatbotKey = async function(req, res, next){
         res
           .status(201)
           .json({ success: true, apiKey });
-        next();
+        nxxt();
     }
     else {
         //console.log(req)

@@ -4,7 +4,7 @@ export default [
         info: null,
     },
     {
-        idea: "Recycle/ reuse",
+        idea: "Recycle / Reuse",
         info: null,
     },
     {
