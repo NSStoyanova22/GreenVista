@@ -15,6 +15,7 @@ export default function Home() {
 
   return (
     <ComponentWithChatbot>
+
       <h1 className="heading">Our Challenge!</h1>
       <h2 className="heading2">Swipe to find your daily challenge</h2>
       

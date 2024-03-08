@@ -81,6 +81,9 @@ export const LogIn = () => {
                         <button onClick={login} className="register-button signin-button" role="button">
                             Sign In
                         </button>
+                        <p className='postNotice'>
+                        *all posts are public.
+                            </p>
                     </form>
                 </div>
  
