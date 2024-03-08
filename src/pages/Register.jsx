@@ -1,6 +1,6 @@
 import '../../styles/login.css'
 import React, { useState } from "react";
-import Screenshot from '../../public/Computer-Phone-screenshot.svg';
+import Screenshot from '../../public/Computer-Phone-screenshot.png';
 import { registerUser } from '../../utils/HTTPServise';
 import { useNavigate } from 'react-router-dom';
 export const Register = () => {
