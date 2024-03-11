@@ -102,7 +102,7 @@
 .display{
     display: flex;
     text-align: center;
-
+    gap: 8rem;
 }
 .img-phonelaptop{
     height: 73rem;
