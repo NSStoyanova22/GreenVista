@@ -28,7 +28,6 @@ const ChatBot = () => {
     const updatedMessages = [...messages, { from: 'user', text: userMessage }];
     setMessages(updatedMessages);
     setUserInput('');
-    // `Bearer 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`
     const chatBotKey = apiKey;
     try {
       const response = await axios.post('https://api.openai.com/v1/chat/completions', {

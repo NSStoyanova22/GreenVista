@@ -14,7 +14,6 @@ const uri = process.env.MONGO_DB_URI;
 mongoConnect
 .then(() => console.log("MongoDB is  connected successfully"))
 .catch((err) => console.error(err));
- 
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(cors());
 //cors({ origin : [ "http://localhost:5174"]})
